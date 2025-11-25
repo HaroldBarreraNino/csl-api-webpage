@@ -1,0 +1,81 @@
+.api-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  min-height: 100vh;
+  background-color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.api-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+.api-search-area {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.api-input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  width: 240px;
+  font-size: 1rem;
+}
+
+.api-button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.api-button:hover {
+  opacity: 0.8;
+}
+
+.api-image {
+  margin-top: 30px;
+  max-width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.api-error {
+  margin-top: 15px;
+  color: red;
+  font-weight: bold;
+}
+
+.btn-white {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 2px solid #000;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.btn-white:hover {
+  background: #000;
+  color: #fff;
+}
+
+.buttons-row {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}

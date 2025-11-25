@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Navbar from "./Navbar";
+import './ApiShowcasePage.css';
 
 const ApiShowcasePage = () => {
 
@@ -31,46 +33,34 @@ const ApiShowcasePage = () => {
 
     return (
         <>
-            <div style={{ textAlign: "center", padding: "20px" }}>
-                <h2>Buscar palabra</h2>
+            <Navbar />
+            <div className="api-container">
+                <h2 className="api-title">Buscar palabra</h2>
 
-                <input
-                    type="text"
-                    value={palabra}
-                    onChange={(e) => setPalabra(e.target.value)}
-                    placeholder="Escribe una palabra"
-                    style={{
-                        padding: "10px",
-                        borderRadius: "8px",
-                        border: "1px solid #ccc",
-                        marginRight: "10px",
-                    }}
-                />
-                <button
-                    onClick={traducirPalabra}
-                    style={{
-                        padding: "10px 20px",
-                        borderRadius: "8px",
-                        background: "#007bff",
-                        color: "white",
-                        border: "none",
-                        cursor: "pointer",
-                    }}
-                >
-                    Buscar
-                </button>
+                <div className="api-search-area">
+                    <input
+                        type="text"
+                        value={palabra}
+                        onChange={(e) => setPalabra(e.target.value)}
+                        placeholder="Escribe una palabra"
+                        className="api-input"
+                    />
 
-                {error && <p style={{ color: "red" }}>{error}</p>}
+                    {/* <button onClick={traducirPalabra} className="api-button">
+                        Translate
+                    </button> */}
+                </div>
+
+                {error && <p className="api-error">{error}</p>}
 
                 {gifUrl && (
-                    <div style={{ marginTop: "20px" }}>
-                        <img
-                            src={gifUrl}
-                            alt="significado animado"
-                            style={{ maxWidth: "300px", borderRadius: "12px", boxShadow: "0 4px 8px rgba(0,0,0,0.2)" }}
-                        />
-                    </div>
+                    <img src={gifUrl} alt="significado animado" className="api-image" />
                 )}
+
+                <div className="buttons-row">
+                    <button onClick={traducirPalabra} className="api-button">Translate</button>
+                    <button className="btn-white">Modify traduction</button>
+                </div>
             </div>
         </>
     );
