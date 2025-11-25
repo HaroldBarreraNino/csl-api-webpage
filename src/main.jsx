@@ -5,6 +5,7 @@ import './index.css'
 import App from './App.jsx'
 import ApiShowcasePage from './components/ApiShowcasePage.jsx';
 import DictionaryPage from './components/DictionaryPage.jsx'
+import ModifyTraductionPage from './components/ModifyTraductionPage.jsx';
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -12,6 +13,7 @@ createRoot(document.getElementById('root')).render(
     <Route path='/' element={<App />}/>
     <Route path='/showcase' element={<ApiShowcasePage />}/>
     <Route path='/dictionary' element={<DictionaryPage />}/>
+    <Route path='/modify' element={<ModifyTraductionPage />}/>
   </Routes>
   </BrowserRouter>,
 )

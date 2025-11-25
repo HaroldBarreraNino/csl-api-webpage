@@ -1,0 +1,85 @@
+/* Monochrome visual styling to match ApiShowcasePage (black & white) */
+/* Shared page container feel */
+#CslUploadForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 640px;
+  margin: 2rem auto;
+  padding: 1.25rem;
+  box-sizing: border-box;
+  background-color: #ffffff; /* white background to match ApiShowcasePage */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#CslUploadForm label {
+  display: flex;
+  flex-direction: column; /* label text above its input */
+  align-items: center;    /* center contents inside each label */
+  text-align: center;
+  width: 100%;
+  color: #000; /* black text */
+}
+
+/* Inputs inside labels get consistent styling similar to ApiShowcasePage */
+#CslUploadForm label input[type="text"],
+#CslUploadForm label input[type="file"] {
+  margin-top: 0.5rem;
+  width: 100%;
+  max-width: 420px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Primary black button (matches .api-button) */
+#CslUploadForm button {
+  margin-top: 0.25rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: opacity 0.2s ease;
+}
+
+#CslUploadForm button:hover {
+  opacity: 0.85;
+}
+
+/* Secondary white button variant (if needed) */
+.btn-white {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 2px solid #000;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.btn-white:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* small responsive tweaks */
+@media (max-width: 480px) {
+  #CslUploadForm {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  #CslUploadForm label input[type="text"],
+  #CslUploadForm label input[type="file"] {
+    max-width: 100%;
+  }
+}
+

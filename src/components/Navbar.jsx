@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -7,7 +8,8 @@ const Navbar = () => {
 
       <div className="nav-links">
         <a href="/dictionary" className="nav-link">Dictionary</a>
-        <button className="nav-btn">Modify Traduction</button>
+        <Link to="/modify" className="nav-btn">Modify Traduction</Link>
+{/*                 <button className="nav-btn">Modify Traduction</button> */}
       </div>
     </nav>
   );
