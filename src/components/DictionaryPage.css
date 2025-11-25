@@ -1,0 +1,81 @@
+/* ApiTablePage.css */
+
+/* --- Estilos de la Navbar (simulación para el diseño de Figma) --- */
+.table-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #333333; /* Fondo oscuro de la barra */
+    color: #ffffff;
+    border-bottom: 1px solid #444444;
+}
+
+.table-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.table-nav-button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+/* --- Estilos del Contenido Principal y Tabla --- */
+
+.table-container {
+    /* background-color: #1a1a1a; */ /* Fondo muy oscuro de la página */
+    min-height: calc(100vh - 70px); /* Ajusta la altura menos la altura de la navbar */
+    padding: 40px;
+    display: flex;
+    justify-content: center; /* Centra la tabla horizontalmente */
+    font-family: Arial, sans-serif;
+    color: #ffffff; /* Texto por defecto blanco */
+}
+
+/* Contenedor que permite que la tabla sea flexible y centrada */
+.responsive-table-wrapper {
+    width: 90%; /* Ancho máximo para la tabla */
+    max-width: 1200px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse; /* Elimina los espacios entre bordes */
+    table-layout: fixed; /* Ayuda a que las columnas tengan el mismo ancho */
+    background-color: #ffffff; /* La tabla misma tiene fondo blanco */
+    color: #000000; /* Texto de la tabla negro */
+}
+
+/* Estilos de las celdas y encabezados */
+.data-table th, .data-table td {
+    border: 1px solid #000000; /* Borde negro como en el diseño de Figma */
+    padding: 15px 10px;
+    text-align: left;
+    height: 80px; /* Altura mínima para que se vea espaciosa */
+    vertical-align: top;
+}
+
+.data-table th {
+    background-color: #f0f0f0; /* Un poco de contraste para los encabezados */
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center; /* Texto de encabezado centrado */
+}
+
+/* Mensajes de estado */
+.loading-text, .error-text {
+    margin-top: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.error-text {
+    color: #ff6666;
+}

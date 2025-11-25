@@ -6,7 +6,7 @@ const Navbar = () => {
       <div className="nav-logo">CSL Dictionary</div>
 
       <div className="nav-links">
-        <a href="/" className="nav-link">Dictionary</a>
+        <a href="/dictionary" className="nav-link">Dictionary</a>
         <button className="nav-btn">Modify Traduction</button>
       </div>
     </nav>
