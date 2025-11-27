@@ -13,7 +13,8 @@ createRoot(document.getElementById('root')).render(
     <Route path='/' element={<App />}/>
     <Route path='/showcase' element={<ApiShowcasePage />}/>
     <Route path='/dictionary' element={<DictionaryPage />}/>
-    <Route path='/modify' element={<ModifyTraductionPage />}/>
+    <Route path='/modify/:id' element={<ModifyTraductionPage />}/>
+    <Route path='/create' element={<ModifyTraductionPage />}/>
   </Routes>
   </BrowserRouter>,
 )

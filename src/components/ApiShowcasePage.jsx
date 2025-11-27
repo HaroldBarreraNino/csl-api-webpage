@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import './ApiShowcasePage.css';
 
@@ -8,6 +9,9 @@ const ApiShowcasePage = () => {
     const [palabra, setPalabra] = useState("");
     const [gifUrl, setGifUrl] = useState(null);
     const [error, setError] = useState(null);
+    const [currentId, setCurrentId] = useState(null);
+
+    const navigate = useNavigate();
 
     //Metodo principal de traduccion
     const traducirPalabra = async () => {
@@ -25,10 +29,20 @@ const ApiShowcasePage = () => {
             //Convertimos la respuesta en un JSON y actualizamos la imagen
             const data = await response.json();
             setGifUrl(data.significadoAnimacion);
+            setCurrentId(data.id);
 
         } catch (error) {
             setError(error.message)
         }
+    }
+
+    const goToModify = () => {
+      if(!currentId){
+        setError('Debes buscar una palabra antes de modificarla');
+        return;
+      }
+
+      navigate(`/modify/${currentId}`);
     }
 
     return (
@@ -59,7 +73,7 @@ const ApiShowcasePage = () => {
 
                 <div className="buttons-row">
                     <button onClick={traducirPalabra} className="api-button">Translate</button>
-                    <button className="btn-white">Modify traduction</button>
+                    <button onClick={goToModify} className="btn-white">Modify traduction</button>
                 </div>
             </div>
         </>
