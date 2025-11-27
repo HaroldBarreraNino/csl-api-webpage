@@ -4,7 +4,7 @@ import './ApiShowcasePage.css';
 
 const ApiShowcasePage = () => {
 
-    const apiUrl = 'http://localhost:3000/api/palabras/'
+    const apiUrl = 'http://localhost:3000/api/palabras/texto/'
     const [palabra, setPalabra] = useState("");
     const [gifUrl, setGifUrl] = useState(null);
     const [error, setError] = useState(null);

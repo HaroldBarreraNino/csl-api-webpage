@@ -41,15 +41,15 @@ const ApiTablePage = () => {
             setLoading(true);
             try {
                 // *** ⚠️ Reemplaza esta línea con tu fetch real si tienes la endpoint ***
-                // const response = await fetch(apiUrl);
-                // if (!response.ok) throw new Error('Error al cargar los datos');
-                // const data = await response.json();
+                const response = await fetch(apiUrl);
+                if (!response.ok) throw new Error('Error al cargar los datos');
+                 const data = await response.json();
                 
-                // setPalabras(data);
+                 setPalabras(data);
 
                 // ** Simulación con un retardo para mostrar "Cargando..." **
-                await new Promise(resolve => setTimeout(resolve, 500)); 
-                setPalabras(DUMMY_DATA); 
+                //await new Promise(resolve => setTimeout(resolve, 500)); 
+                //setPalabras(DUMMY_DATA); 
                 // *** ---------------------------------------------------- ***
 
             } catch (err) {
@@ -66,7 +66,7 @@ const ApiTablePage = () => {
         { label: "Traduccion", key: "palabra" },
         { label: "Texto", key: "significadoAnimacion" }, 
         { label: "Modificado por ultima vez", key: "ultimaModificacion" },
-        { label: "Autor", key: "creadoEl" } 
+        { label: "Creado el", key: "creadoEl" } 
     ];
 
     return (
@@ -91,7 +91,7 @@ const ApiTablePage = () => {
                             <tbody>
                                 {palabras.map((item) => (
                                     <tr key={item.id}>
-                                        <td>{item.palabra}</td>
+                                        <td><img src={item.significadoAnimacion} alt={item.palabra}/></td>
                                         <td>{item.palabra}</td> 
                                         <td>{item.ultimaModificacion}</td>
                                         <td>{item.creadoEl}</td> 
