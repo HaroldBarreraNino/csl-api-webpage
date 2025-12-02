@@ -1,14 +1,20 @@
 import { Link } from 'react-router';
+import useGifToolTip from '../hooks/useGifToolTip.js';
+import ToolTipGif from './ToolTipGif.jsx';
 import './Navbar.css';
 
 const ModifyTraductionNavbar = () => {
+
+  const { gifUrl, position, showGif, hideGif } = useGifToolTip(); 
+
     return (
         <nav className="nav-container">
             <div className="nav-logo">CSL Dictionary</div>
 
             <div className="nav-links">
-                <a href="/dictionary" className="nav-link">Dictionary</a>
-                <Link to="/" className="nav-btn">Go Back to Home Page</Link>
+                <a href="/dictionary" className="nav-link" onMouseEnter={(e) => showGif('diccionario', e)} onMouseLeave={hideGif}>Dictionary</a>
+                <Link to="/" className="nav-btn" onMouseEnter={(e) => showGif('inicio', e)} onMouseLeave={hideGif}>Go Back to Home Page</Link>
+                <ToolTipGif gifUrl={gifUrl} position={position} />
             </div>
         </nav>
     );
