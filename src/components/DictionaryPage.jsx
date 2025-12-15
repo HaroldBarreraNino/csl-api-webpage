@@ -1,37 +1,13 @@
 import { useState, useEffect } from "react";
 import './DictionaryPage.css'; 
 import DicionaryNavbar from "./DictionaryNavbar";
-
-// Datos de ejemplo 
-const DUMMY_DATA = [
-    { 
-        id: 1, 
-        palabra: "Hola", 
-        significadoAnimacion: "GIF de hola", 
-        creadoEl: "2025-10-20", 
-        ultimaModificacion: "2025-10-21" 
-    },
-    { 
-        id: 2, 
-        palabra: "Adiós", 
-        significadoAnimacion: "GIF de adiós", 
-        creadoEl: "2025-10-22", 
-        ultimaModificacion: "2025-10-22" 
-    },
-    { 
-        id: 3, 
-        palabra: "Gracias", 
-        significadoAnimacion: "GIF de gracias", 
-        creadoEl: "2025-11-01", 
-        ultimaModificacion: "2025-11-20" 
-    },
-];
+import { API_URL } from "../config/api.js";
 
 const ApiTablePage = () => {
 
-    const apiUrl = 'http://localhost:3000/api/palabras'; 
+    const apiUrl = `${API_URL}/palabras`; 
     
-    const [palabras, setPalabras] = useState(DUMMY_DATA);
+    const [palabras, setPalabras] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
@@ -40,18 +16,10 @@ const ApiTablePage = () => {
         const fetchPalabras = async () => {
             setLoading(true);
             try {
-                // *** ⚠️ Reemplaza esta línea con tu fetch real si tienes la endpoint ***
                 const response = await fetch(apiUrl);
                 if (!response.ok) throw new Error('Error al cargar los datos');
-                 const data = await response.json();
-                
-                 setPalabras(data);
-
-                // ** Simulación con un retardo para mostrar "Cargando..." **
-                //await new Promise(resolve => setTimeout(resolve, 500)); 
-                //setPalabras(DUMMY_DATA); 
-                // *** ---------------------------------------------------- ***
-
+                const data = await response.json();
+                setPalabras(data);
             } catch (err) {
                 setError(err.message);
             } finally {
@@ -77,7 +45,6 @@ const ApiTablePage = () => {
                 {loading && <p className="loading-text">Cargando datos...</p>}
                 {error && <p className="error-text">Error: {error}</p>}
 
-                {/* La tabla solo se muestra si no hay error y ya cargó */}
                 {!loading && !error && (
                     <div className="responsive-table-wrapper">
                         <table className="data-table">

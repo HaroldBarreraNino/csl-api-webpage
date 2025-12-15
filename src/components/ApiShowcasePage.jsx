@@ -2,10 +2,11 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import './ApiShowcasePage.css';
+import { API_URL } from "../config/api.js";
 
 const ApiShowcasePage = () => {
 
-    const apiUrl = 'http://localhost:3000/api/palabras/texto/'
+    const apiUrl = `${API_URL}/palabras/texto/`
     const [palabra, setPalabra] = useState("");
     const [gifUrl, setGifUrl] = useState(null);
     const [error, setError] = useState(null);

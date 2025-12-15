@@ -2,10 +2,11 @@ import './ModifyTraductionPage.css';
 import ModifyTraductionNavbar from "./ModifyTraductionNavbar";
 import { useState } from 'react';
 import { useParams } from "react-router-dom";
+import { API_URL } from "../config/api.js";
 
 const ModifyTraductionPage = () => {
 
-    const apiUrl = 'http://localhost:3000/api/palabras'
+    const apiUrl = `${API_URL}palabras`
     
     const { id } = useParams();
     const [file,setFile] = useState(null);

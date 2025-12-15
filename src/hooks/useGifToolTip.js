@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { API_URL } from "../config/api.js";
 
 export default function useGifToolTip() {
   const [gifUrl, setGifUrl] = useState('');
@@ -14,7 +15,7 @@ export default function useGifToolTip() {
         left: rect.left,
       });
 
-      const res = await fetch(`http://localhost:3000/api/palabras/texto/${text}`);
+      const res = await fetch(`${API_URL}/palabras/texto/${text}`);
       const data = await res.json();
       console.log(data);
 
