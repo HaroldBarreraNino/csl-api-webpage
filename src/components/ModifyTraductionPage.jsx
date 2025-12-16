@@ -6,11 +6,12 @@ import { API_URL } from "../config/api.js";
 
 const ModifyTraductionPage = () => {
 
-    const apiUrl = `${API_URL}palabras`
+    const apiUrl = `${API_URL}/palabras`
     
     const { id } = useParams();
     const [file,setFile] = useState(null);
     const [meaning,setMeaning] = useState('');
+    const [msg,setMsg] = useState('');
 
     const handleSubmit = async(e) => {
       e.preventDefault();
@@ -31,6 +32,7 @@ const ModifyTraductionPage = () => {
 
           if (putResponse.ok) {
             console.log('Traduccion Modificada');
+            setMsg('Traduccion Modificada');
             data = await putResponse.json();
             return;
           }
@@ -43,6 +45,7 @@ const ModifyTraductionPage = () => {
 
         if (postResponse.ok) {
           console.log('Traduccion Creada');
+          setMsg('Traduccion Creada');
           data = await postResponse.json();
           return;
         }
@@ -69,6 +72,7 @@ const ModifyTraductionPage = () => {
 
             <button type="submit">Submit Traduction</button>
         </form>
+        {msg}
     </>;
 };
 

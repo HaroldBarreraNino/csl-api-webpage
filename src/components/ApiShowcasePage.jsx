@@ -20,7 +20,14 @@ const ApiShowcasePage = () => {
             setError(null);
             setGifUrl(null);
 
-            const response = await fetch(apiUrl + palabra);
+            if(!palabra.trim()){
+              setError('Ingrese una palabra.');
+              return;
+            }
+
+            const palabraLimpia = palabra.trim();
+
+            const response = await fetch(apiUrl + encodeURIComponent(palabraLimpia));
 
             //Mensaje generico de error
             if (!response.ok) {

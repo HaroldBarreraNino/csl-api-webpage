@@ -58,7 +58,7 @@ const ApiTablePage = () => {
                             <tbody>
                                 {palabras.map((item) => (
                                     <tr key={item.id}>
-                                        <td><img src={item.significadoAnimacion} alt={item.palabra}/></td>
+                                        <td><div className="gif-cell"><img src={item.significadoAnimacion} alt={item.palabra} loading="lazy"/></div></td>
                                         <td>{item.palabra}</td> 
                                         <td>{item.ultimaModificacion}</td>
                                         <td>{item.creadoEl}</td> 
