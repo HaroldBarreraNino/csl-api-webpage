@@ -26,6 +26,7 @@ const ApiShowcasePage = () => {
             }
 
             const palabraLimpia = palabra.trim();
+            console.log(palabraLimpia);
 
             const response = await fetch(apiUrl + encodeURIComponent(palabraLimpia));
 
