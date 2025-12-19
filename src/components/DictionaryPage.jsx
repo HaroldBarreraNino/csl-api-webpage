@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import './DictionaryPage.css'; 
 import DicionaryNavbar from "./DictionaryNavbar";
 import { API_URL } from "../config/api.js";
+import Footer from './Footer.jsx';
 
 const ApiTablePage = () => {
 
@@ -69,6 +70,7 @@ const ApiTablePage = () => {
                     </div>
                 )}
             </div>
+          <Footer />
         </>
     );
 }

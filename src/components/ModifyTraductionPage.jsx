@@ -3,6 +3,7 @@ import ModifyTraductionNavbar from "./ModifyTraductionNavbar";
 import { useState } from 'react';
 import { useParams } from "react-router-dom";
 import { API_URL } from "../config/api.js";
+import Footer from './Footer.jsx';
 
 const ModifyTraductionPage = () => {
 
@@ -73,6 +74,7 @@ const ModifyTraductionPage = () => {
             <button type="submit">Submit Traduction</button>
         </form>
         {msg}
+        <Footer />
     </>;
 };
 

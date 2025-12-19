@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import './ApiShowcasePage.css';
 import { API_URL } from "../config/api.js";
+import Footer from './Footer.jsx';
 
 const ApiShowcasePage = () => {
 
@@ -68,10 +69,6 @@ const ApiShowcasePage = () => {
                         placeholder="Escribe una palabra"
                         className="api-input"
                     />
-
-                    {/* <button onClick={traducirPalabra} className="api-button">
-                        Translate
-                    </button> */}
                 </div>
 
                 {error && <p className="api-error">{error}</p>}
@@ -85,6 +82,7 @@ const ApiShowcasePage = () => {
                     <button onClick={goToModify} className="btn-white">Modify traduction</button>
                 </div>
             </div>
+          <Footer />
         </>
     );
 }
