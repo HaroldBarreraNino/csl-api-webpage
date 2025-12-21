@@ -1,7 +1,7 @@
 const Footer = () => {
   return(
       <footer>
-        <a href="../assets/Documentacion TFM.docx" download>¿Need Help?</a>
+        <a href="/Documentacion-TFM.docx" download>¿Need Help?</a>
       </footer>
   );
 }
