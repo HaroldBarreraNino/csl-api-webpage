@@ -1,16 +1,17 @@
-# React + Vite
+Colombian Sign Language Dictionary - TFM
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Las operaciones que la API debe soportar son las siguientes:
+- Crear palabra
+- Consultar lista de palabras
+- Consultar palabra por texto
+- Actualizar palabra completamente
 
-Currently, two official plugins are available:
+**Recursos identificados**
+- palabras (Palabras): Representa una palabra traducida en LSC en el sistema.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Método Http | Endpoint    | Query Params | Cuerpo JSON de la petición           | Respuesta JSON de la petición                                      | Códigos HTTP de respuesta posibles                                   |
+|-------------|-------------|--------------|--------------------------------------|--------------------------------------------------------------------|----------------------------------------------------------------------|
+| POST        | /api/palabras/      |              | `{"palabra":"string","significadoAnimacion":"file (GIF)"}`  | `{"id":integer}` | 201 Created, 400 Bad Request, 500 Internal Server Error              |
+| GET         | /api/palabras/texto/{texto}      |              |                                      | `{"significadoAnimacion":"string"}` | 200 OK, 500 Internal Server Error, 400 Bad Request, 404 Not Found    |
+| GET         | /api/palabras/ |              |                                      | `[{"id":integer,"palabra":"string","creadoEl":"string","ultimaModificacion":"string", "significadoAnimacion":"string"}]` | 200 OK, 404 Not Found, 500 Internal Server Error, 404 Not Found      |
+| PUT         | /api/palabras/{id} |              | `{"palabra":"string","significadoAnimacion":"file (GIF)"}`  | `{"actualizado":integer}` | 200 OK, 400 Bad Request, 404 Not Found, 500 Internal Server Error    |
